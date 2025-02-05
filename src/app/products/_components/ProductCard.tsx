@@ -1,8 +1,22 @@
+import { addToCart } from "@/redux/features/cartSlice";
+import { useAppDispatch } from "@/redux/hooks";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
-  const { image, name, price, stock } = product;
+  const { _id, image, name, price, stock } = product;
+  const dispatch = useAppDispatch();
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        _id,
+        name,
+        price,
+        quantity: 1,
+        image,
+      })
+    );
+  };
   return (
     <div className="border hover:shadow-custom transition-shadow border-border rounded-lg overflow-hidden group min-h-fit">
       <Image
@@ -17,7 +31,10 @@ const ProductCard = ({ product }: { product: IProduct }) => {
         <p className="text-red-600">${price}.00</p>
         <div className="flex items-center justify-between">
           <p className="text-slate-600 text-sm">{stock} in stock</p>
-          <button className="flex items-center gap-x-1 px-2 py-1.5 bg-slate-200 rounded-md text-slate-900 text-sm hover:bg-primary hover:text-white transition-all">
+          <button
+            onClick={handleAddToCart}
+            className="flex items-center gap-x-1 px-2 py-1.5 bg-slate-200 rounded-md text-slate-900 text-sm hover:bg-primary hover:text-white transition-all"
+          >
             <Plus strokeWidth={1.5} size={18} /> Add
           </button>
         </div>

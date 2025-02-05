@@ -1,5 +1,8 @@
 "use client";
-import { clearKeyword, setKeyword } from "@/redux/product/productFilterSlice";
+import {
+  clearKeyword,
+  setKeyword,
+} from "@/redux/features/product/productFilterSlice";
 import { debounce } from "lodash";
 import { QrCode, Search, X } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";

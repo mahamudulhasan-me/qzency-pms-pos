@@ -1,4 +1,4 @@
-import baseApiSlice from "../baseAPI/baseApiSlice";
+import baseApiSlice from "../../baseAPI/baseApiSlice";
 
 interface ProductQueryParams {
   page?: number;
