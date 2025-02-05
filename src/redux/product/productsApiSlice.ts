@@ -5,7 +5,7 @@ const productApiSlice = baseApiSlice.injectEndpoints({
     getProducts: builder.query({
       query: () => ({
         method: "GET",
-        url: "/product",
+        url: "/product?page=1&limit=24",
       }),
     }),
   }),
