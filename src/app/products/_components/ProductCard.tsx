@@ -29,7 +29,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
         alt=""
         width={500}
         height={500}
-        className="w-[256px] h-[172px] object-cover"
+        className="md:w-[256px] h-[172px] object-cover"
       />
       <div className="p-3 font-[500] border-t border-border">
         <h6 className="text-slate-900">{name}</h6>

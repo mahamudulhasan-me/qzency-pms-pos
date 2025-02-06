@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container  mx-auto w-full px-4 flex items-center justify-between">
         <aside className="flex items-center">
           {" "}
-          <div className="relative w-44 pb-5 pt-2">
+          <div className="relative md:w-44 w-32 pb-5 pt-2">
             <Link href={"/"}>
               <Image
                 src={"/images/logo.svg"}

@@ -16,13 +16,13 @@ const ProductsPage = () => {
     <div
       className={`container mx-auto my-5 ${
         totalQuantity
-          ? "px-4 flex items-start justify-between gap-x-4"
-          : "px-10"
+          ? "md:px-4 flex md:flex-row flex-col items-start justify-between gap-x-4"
+          : "md:px-10 px-4"
       } h-screen`}
     >
       <div
-        className={`bg-white border border-border shadow-custom rounded-2xl h-screen ${
-          totalQuantity ? "w-3/4 " : "w-full"
+        className={`bg-white border  border-border shadow-custom rounded-2xl h-screen ${
+          totalQuantity ? "md:w-3/4 w-full " : "w-full"
         }`}
       >
         <div className={`flex flex-col h-full `}>

@@ -71,7 +71,7 @@ const ProductsGrid = () => {
     <div className="flex-1 min-h-0 overflow-hidden">
       <div
         className={`border-t border-border p-5 grid ${
-          totalQuantity ? "grid-cols-4" : "grid-cols-6"
+          totalQuantity ? "md:grid-cols-4" : "md:grid-cols-6 grid-cols-1"
         } gap-5 h-full overflow-y-auto content-start
         scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400
         [&::-webkit-scrollbar]:w-2
@@ -88,7 +88,7 @@ const ProductsGrid = () => {
         <div
           ref={loadingRef}
           className={`${
-            totalQuantity ? "col-span-4" : "col-span-6"
+            totalQuantity ? "md:col-span-4" : "md:col-span-6"
           } h-10 flex items-center justify-center`}
         >
           {isFetching && (

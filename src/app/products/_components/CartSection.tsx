@@ -67,7 +67,7 @@ const CartSection = () => {
       <div
         className={`${
           totalQuantity ? "block" : "hidden"
-        } w-1/4 bg-white border border-border shadow-custom rounded-xl `}
+        } md:w-1/4 w-full bg-white border border-border shadow-custom rounded-xl `}
       >
         <div className="px-4 py-2 border-b border-border flex items-center justify-between">
           <h1 className=" font-semibold">Cart Items</h1>
