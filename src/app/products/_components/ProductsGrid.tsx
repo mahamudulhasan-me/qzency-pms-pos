@@ -60,11 +60,15 @@ const ProductsGrid = () => {
   }, [isFetching, hasMorePages]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <p className="w-full flex items-center justify-center mt-10 gap-x-1 font-semibold r">
+        <Loader className="animate-spin" strokeWidth={1.5} /> Loading...
+      </p>
+    );
   }
 
   return (
-    <div className="flex-1 min-h-0">
+    <div className="flex-1 min-h-0 overflow-hidden">
       <div
         className={`border-t border-border p-5 grid ${
           totalQuantity ? "grid-cols-4" : "grid-cols-6"

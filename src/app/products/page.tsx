@@ -1,10 +1,16 @@
 "use client";
 import { useAppSelector } from "@/redux/hooks";
+import { useRouter } from "next/navigation";
 import CartSection from "./_components/CartSection";
 import ProductsGrid from "./_components/ProductsGrid";
 import SearchInput from "./_components/SearchInput";
 
 const ProductsPage = () => {
+  const { isEnabled } = useAppSelector((state) => state.enablePOSystem);
+  const navigate = useRouter();
+  if (!isEnabled) {
+    navigate.push("/");
+  }
   const { totalQuantity } = useAppSelector((state) => state.cart);
   return (
     <div

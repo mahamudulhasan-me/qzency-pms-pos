@@ -2,11 +2,15 @@ import { addToCart } from "@/redux/features/cartSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { Plus } from "lucide-react";
 import Image from "next/image";
+import { toast } from "sonner";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
   const { _id, image, name, price, stock } = product;
   const dispatch = useAppDispatch();
   const handleAddToCart = () => {
+    if (stock === 0) {
+      toast.error("Out of stock");
+    }
     dispatch(
       addToCart({
         _id,
@@ -16,6 +20,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
         image,
       })
     );
+    toast.success("Added to cart");
   };
   return (
     <div className="border hover:shadow-custom transition-shadow border-border rounded-lg overflow-hidden group min-h-fit">
