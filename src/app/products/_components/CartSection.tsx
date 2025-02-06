@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const paymentMethods = [
   {
@@ -58,6 +59,7 @@ const CartSection = () => {
         products: cartItems,
       })
     );
+    toast.success("Order Placed Successfully");
   };
 
   return (
