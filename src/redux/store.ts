@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import baseApiSlice from "./baseAPI/baseApiSlice";
 import { cartReducer } from "./features/cartSlice";
 import { enablePOSystemReducer } from "./features/enablePOSystem";
+import { orderReducer } from "./features/orderSlice";
 import { productReducer } from "./features/product/productFilterSlice";
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     enablePOSystem: enablePOSystemReducer,
     productFilter: productReducer,
     cart: cartReducer,
+    order: orderReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApiSlice.middleware),

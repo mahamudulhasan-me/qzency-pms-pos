@@ -6,6 +6,7 @@ import {
   increaseQuantity,
   removeFromCart,
 } from "@/redux/features/cartSlice";
+import { placeOrder } from "@/redux/features/orderSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import {
   Banknote,
@@ -37,6 +38,7 @@ const paymentMethods = [
 ];
 
 const CartSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<string | undefined>("");
   const { cartItems, totalPrice, totalQuantity } = useAppSelector(
     (state) => state.cart
@@ -45,6 +47,18 @@ const CartSection = () => {
   const discount = 5;
   const tax = 323;
   const finalTotal = totalPrice - discount + tax;
+  const handlePlaceOrder = () => {
+    setIsOpen(true);
+    dispatch(
+      placeOrder({
+        subtotal: totalPrice,
+        finalPrice: finalTotal,
+        taxes: tax,
+        discount,
+        products: cartItems,
+      })
+    );
+  };
 
   return (
     <>
@@ -146,13 +160,14 @@ const CartSection = () => {
                   paymentMethod === method.name
                     ? "border-primary bg-primary/10 text-primary"
                     : "border-border"
-                } border cursor-pointer  p-2 flex items-center gap-x-1 text-sm text-slate-700 rounded-md`}
+                } border hover:border-primary cursor-pointer  p-2 flex items-center gap-x-1 text-sm text-slate-700 rounded-md`}
               >
                 <input
                   type="radio"
                   name="payment"
                   id={method.name}
                   value={method.name}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
                   checked={paymentMethod === method.name}
                 />
                 <span>{method.icons}</span> {method.name}
@@ -176,6 +191,7 @@ const CartSection = () => {
             </span>
           </div>
           <button
+            onClick={handlePlaceOrder}
             disabled={paymentMethod === "" || totalQuantity === 0}
             className="bg-primary text-center font-semibold mt-4 w-full text-white py-3 rounded-lg disabled:opacity-30 disabled:cursor-not-allowed"
           >
@@ -183,7 +199,7 @@ const CartSection = () => {
           </button>
         </div>
       </div>
-      <OrderModal />
+      <OrderModal open={isOpen} setOpen={setIsOpen} />
     </>
   );
 };
