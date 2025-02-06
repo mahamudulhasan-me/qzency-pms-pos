@@ -4,7 +4,7 @@ A modern Point of Sale system built with Next.js, featuring real-time search, ca
 
 ## 🚀 Live Demo
 
-[View Demo](your-demo-link-here)
+[View Demo](https://qzency-pms-pos.vercel.app/)
 
 ## ✨ Features
 
@@ -40,7 +40,7 @@ A modern Point of Sale system built with Next.js, featuring real-time search, ca
 
 ## 📋 Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - npm or yarn
 
 ## 🚀 Getting Started
@@ -48,13 +48,13 @@ A modern Point of Sale system built with Next.js, featuring real-time search, ca
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/pos-system.git
+git clone https://github.com/mahamudulhasan-me/qzency-pms-pos.git
 ```
 
 2. Install dependencies:
 
 ```bash
-cd pos-system
+cd qzency-pms-pos
 npm install
 # or
 yarn install
@@ -89,77 +89,12 @@ Parameters:
 - `page`: Current page number for pagination
 - `limit`: Number of products per page
 
-## 🎯 Key Features Implementation
-
-### Search Functionality
-
-```javascript
-// Debounced search implementation
-const debouncedSearch = debounce((searchTerm) => {
-  // API call logic
-}, 500);
-```
-
-### Cart Management
-
-```javascript
-// Redux slice example
-const cartSlice = createSlice({
-  name: "cart",
-  initialState,
-  reducers: {
-    addToCart: (state, action) => {
-      // Add to cart logic
-    },
-    // Other reducers
-  },
-});
-```
-
-## 📁 Project Structure
-
-```
-pos-system/
-├── components/         # Reusable components
-├── pages/             # Next.js pages
-├── public/            # Static assets
-├── redux/             # Redux store and slices
-├── styles/            # Global styles
-└── utils/             # Utility functions
-```
-
-## 🧪 Testing
-
-Run the test suite:
-
-```bash
-npm test
-# or
-yarn test
-```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
 ## 👤 Author
 
-Your Name
+Mahamudul Hasan
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📫 Support
-
-For support, email your-email@example.com or raise an issue in the repository.
+- GitHub: [@mahamudulhasan-me](https://github.com/mahamudulhasan-me/)
+- LinkedIn: [Mahamudul Hasan](https://www.linkedin.com/in/mahamudulhasan-me/)
 
 ## 🙏 Acknowledgments
 
